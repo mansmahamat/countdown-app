@@ -13,13 +13,13 @@ import confetti from 'canvas-confetti'
   export class CountdownComponent implements OnInit, OnDestroy {
     @Input() targetDate!: Date
     timeLeft = ''
-    private timerId: any
+    private timerId: number | undefined
     private confettiTriggered = false
   
     constructor(private countdownService: CountdownService) {}
   
     ngOnInit() {
-      this.timerId = setInterval(() => {
+      this.timerId = window.setInterval(() => {
         this.timeLeft = this.countdownService.getTimeDiff(this.targetDate)
         this.checkForConfetti()
       }, 1000)
