@@ -36,7 +36,6 @@ src/app/
 │   └── event-form/         # Event input form
 ├── core/
 │   └── services/           # Countdown logic & storage
-└── shared/                 # (empty - cleaned up)
 ```
 
 ## Development
