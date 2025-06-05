@@ -9,7 +9,6 @@
     align-items: center;
   }
 
-
   .input-group {
     border: 1px solid #d1d5db;
     border-radius: 8px;
@@ -54,10 +53,6 @@
     box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
-  }
-  
-  .input-field#title {
-    font-size: 1rem;
   }
   
   .error-message {
