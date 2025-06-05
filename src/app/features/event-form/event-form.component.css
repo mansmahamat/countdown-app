@@ -19,6 +19,10 @@
     width: 100%;
   }
   
+  .input-group.error {
+    border-color: #ef4444;
+  }
+  
   .floating-label {
     font-size: 0.75rem;
     font-weight: 400;
@@ -27,8 +31,16 @@
     margin-left: 10px;
   }
   
+  .input-group.error .floating-label {
+    color: #ef4444;
+  }
+  
   .input-group:focus-within .floating-label {
     color: #374151;
+  }
+  
+  .input-group.error:focus-within .floating-label {
+    color: #ef4444;
   }
   
   .input-field {
@@ -46,6 +58,13 @@
   
   .input-field#title {
     font-size: 1rem;
+  }
+  
+  .error-message {
+    font-size: 0.75rem;
+    color: #ef4444;
+    padding: 4px 16px 8px;
+    margin: 0;
   }
   
   @media screen and (orientation: landscape) {
@@ -73,6 +92,11 @@
     .floating-label {
       font-size: 0.7rem;
     }
+
+    .error-message {
+      font-size: 0.65rem;
+      padding: 2px 12px 6px;
+    }
   }
   
   @media screen and (orientation: landscape) and (max-height: 500px) {
@@ -89,6 +113,11 @@
     
     .floating-label {
       font-size: 0.65rem;
+    }
+
+    .error-message {
+      font-size: 0.6rem;
+      padding: 2px 12px 4px;
     }
   }
   

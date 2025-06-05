@@ -1,5 +1,5 @@
 <form class="form">
-    <fieldset class="input-group">
+    <fieldset class="input-group" [class.error]="nameError">
       <legend class="floating-label">Title</legend>
       <input
         type="text"
@@ -10,9 +10,10 @@
         id="title"
         (input)="onInputChange()"
       />
+      <div *ngIf="nameError" class="error-message">{{ nameError }}</div>
     </fieldset>
   
-    <fieldset class="input-group">
+    <fieldset class="input-group" [class.error]="dateError">
       <legend class="floating-label">Date</legend>
       <input
         type="datetime-local"
@@ -22,6 +23,7 @@
         id="date"
         (input)="onInputChange()"
       />
+      <div *ngIf="dateError" class="error-message">{{ dateError }}</div>
     </fieldset>
   </form>
   

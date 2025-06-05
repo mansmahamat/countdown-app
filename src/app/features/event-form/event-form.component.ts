@@ -1,10 +1,11 @@
 import { Output, Component, EventEmitter, Input, OnChanges, SimpleChanges } from "@angular/core";
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-event-form',
     standalone: true,
-    imports: [FormsModule],
+    imports: [FormsModule, CommonModule],
     templateUrl: './event-form.component.html',
     styleUrls: ['./event-form.component.css'],
   })
@@ -15,6 +16,8 @@ import { FormsModule } from '@angular/forms';
     
     name = ''
     date: string = ''
+    nameError = ''
+    dateError = ''
 
     ngOnChanges(changes: SimpleChanges) {
       if (changes['eventName'] && this.eventName) {
@@ -48,18 +51,44 @@ import { FormsModule } from '@angular/forms';
         input.style.fontSize = `${fontSize}px`
       }
     }
+
+    private validateInputs(): boolean {
+      this.nameError = ''
+      this.dateError = ''
+
+      if (!this.name || !this.name.trim()) {
+        this.nameError = 'Event name is required'
+        return false
+      }
+
+      if (!this.date) {
+        this.dateError = 'Event date is required'
+        return false
+      }
+
+      const selectedDate = new Date(this.date)
+      if (isNaN(selectedDate.getTime())) {
+        this.dateError = 'Invalid date format'
+        return false
+      }
+
+      if (selectedDate <= new Date()) {
+        this.dateError = 'Event date must be in the future'
+        return false
+      }
+
+      return true
+    }
   
     onInputChange() {
       this.fitInputText('title')
       
-      if (this.name.trim() && this.date) {
+      if (this.validateInputs()) {
         const submittedDate = new Date(this.date)
-        if (!isNaN(submittedDate.getTime())) {
-          this.formSubmitted.emit({
-            name: this.name.trim(),
-            date: submittedDate,
-          })
-        }
+        this.formSubmitted.emit({
+          name: this.name.trim(),
+          date: submittedDate,
+        })
       }
     }
   }
