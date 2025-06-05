@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
     @Input() eventName: string = ''
     @Input() eventDate: Date | undefined
     @Output() formSubmitted = new EventEmitter<{ name: string; date: Date }>()
+    @Output() formReset = new EventEmitter<void>()
     
     name = ''
     date: string = ''
@@ -78,6 +79,14 @@ import { CommonModule } from '@angular/common';
       }
 
       return true
+    }
+
+    onReset() {
+      this.name = ''
+      this.date = ''
+      this.nameError = ''
+      this.dateError = ''
+      this.formReset.emit()
     }
   
     onInputChange() {

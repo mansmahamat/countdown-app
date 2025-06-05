@@ -30,4 +30,10 @@ export class AppComponent implements OnInit {
     this.eventDate = data.date
     this.storage.save('event', data)
   }
+
+  onFormReset() {
+    this.eventName = ''
+    this.eventDate = undefined as any
+    this.storage.save('event', null)
+  }
 }

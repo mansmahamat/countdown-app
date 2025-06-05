@@ -25,5 +25,9 @@
       />
       <div *ngIf="dateError" class="error-message">{{ dateError }}</div>
     </fieldset>
+
+    <button *ngIf="name || date" type="button" class="reset-btn" (click)="onReset()">
+      Reset
+    </button>
   </form>
   
