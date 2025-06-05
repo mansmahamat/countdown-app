@@ -1,0 +1,94 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .input-group {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+  }
+  
+  .floating-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #666;
+    padding: 0 6px;
+    margin-left: 10px;
+  }
+  
+  .input-group:focus-within .floating-label {
+    color: #374151;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .input-field#title {
+    font-size: 1rem;
+  }
+  
+  @media screen and (orientation: landscape) {
+    .form {
+      gap: 1rem;
+      padding: 0.75rem;
+      max-width: 600px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .input-group {
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+    }
+    
+    .input-field {
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+    
+    .floating-label {
+      font-size: 0.7rem;
+    }
+  }
+  
+  @media screen and (orientation: landscape) and (max-height: 500px) {
+    .form {
+      gap: 0.5rem;
+      padding: 0.5rem;
+      max-width: 500px;
+    }
+    
+    .input-field {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+    
+    .floating-label {
+      font-size: 0.65rem;
+    }
+  }
+  

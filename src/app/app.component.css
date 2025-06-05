@@ -1,0 +1,75 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    max-width: 100vw;
+    box-sizing: border-box;
+    background-color: #f5f3f3;
+}
+  
+.countdown-section {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+  
+.event-name {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #72035d;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(16px, 8vw, 120px);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
+    line-height: 1.2;
+}
+
+@media screen and (orientation: portrait) {
+    .countdown-section {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
+}
+  
+@media screen and (orientation: landscape) {
+    .app-container {
+        padding: 0.5rem 2rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .countdown-section {
+        margin-top: 1rem;
+        flex-shrink: 0;
+    }
+    
+    .event-name {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .app-container {
+        padding: 0.25rem 1rem;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .countdown-section {
+        margin-top: 0.5rem;
+    }
+    
+    .event-name {
+        margin-bottom: 0.25rem;
+    }
+}
+  

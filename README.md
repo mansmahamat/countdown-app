@@ -1,59 +1,57 @@
-# CountdownApp
+# Countdown App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+A responsive countdown timer application built with Angular 19 and TypeScript.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Responsive countdown timer** with auto-fitting text
+- **Event management** with local storage persistence  
+- **Canvas confetti animation** when countdown reaches zero
+- **Adaptive input sizing** for long event names
+- **Mobile-optimized** for portrait and landscape orientations
+
+## Quick Setup
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200`
 
-## Code scaffolding
+## Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 19** (Standalone components)
+- **TypeScript**
+- **Canvas Confetti** for celebrations
+- **Local Storage** for persistence
+- **CSS Clamp** for responsive typography
 
-```bash
-ng generate component component-name
+## Project Structure
+
+```
+src/app/
+├── features/
+│   ├── countdown/          # Timer display component
+│   └── event-form/         # Event input form
+├── core/
+│   └── services/           # Countdown logic & storage
+└── shared/                 # (empty - cleaned up)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
 
 ```bash
-ng generate --help
+npm start              # Development server
+npm run build          # Production build
+npm test               # Unit tests
 ```
 
-## Building
+## Key Components
 
-To build the project run:
+- **CountdownComponent**: Real-time timer with confetti trigger
+- **EventFormComponent**: Auto-resizing input fields  
+- **CountdownService**: Time calculation logic
+- **StorageService**: Local persistence
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Built with modern Angular patterns: standalone components, reactive forms, and CSS clamp for responsive design.

@@ -1,0 +1,27 @@
+<form class="form">
+    <fieldset class="input-group">
+      <legend class="floating-label">Title</legend>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        placeholder=""
+        class="input-field"
+        id="title"
+        (input)="onInputChange()"
+      />
+    </fieldset>
+  
+    <fieldset class="input-group">
+      <legend class="floating-label">Date</legend>
+      <input
+        type="datetime-local"
+        [(ngModel)]="date"
+        name="date"
+        class="input-field"
+        id="date"
+        (input)="onInputChange()"
+      />
+    </fieldset>
+  </form>
+  
